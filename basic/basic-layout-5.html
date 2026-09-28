@@ -6,7 +6,28 @@
     <title>Basic Layout 5</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-      /* Doe hier jouw ding! */
+      body {
+        display: grid;
+        gap: 1rem;
+        margin: 0;
+        padding: 1rem;
+
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 2fr 3fr 2fr;
+
+        /*Alle kinderen nemen 2 kolommen in.*/
+        & > * {
+          grid-column-end: span 2;
+        }
+      }
+
+      header, main, footer {
+        grid-column-start: 2;
+      }
+
+      nav {
+        grid-column-start: 1;
+      }
     </style>
   </head>
   <body id="basic-layout-5">
